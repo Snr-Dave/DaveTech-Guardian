@@ -5,9 +5,10 @@ A cinematic, high-fidelity 3D animated sequence featuring the Dave-Tech Guardian
 ## 🚀 Features
 
 - **3D AI Mascot**: High-fidelity robot torso model with dynamic animations.
-- **Cinematic Sequences**: Orchestrated scenes including shield deployment, token orbiting, and power-up effects.
-- **Holographic UI**: Real-time 3D holographic overlays and UI elements.
-- **Performance Optimized**: Built with Vite and React Three Fiber for smooth 60FPS rendering.
+- **Cinematic Sequences**: 5 orchestrated scenes including entry, shield deployment, token orbiting, power-up, and outro.
+- **Holographic UI**: Real-time 3D holographic overlays, digital grids, and volumetric fog effects.
+- **Dynamic Lighting**: Adaptive lighting highlights and particle systems (drifting sparks) that react to scene changes.
+- **Performance Optimized**: Built with Vite 7 and React Three Fiber for smooth 60FPS rendering.
 - **Replit Ready**: Pre-configured workflows for instant development and deployment.
 
 ## 🛠 Tech Stack
@@ -22,10 +23,10 @@ A cinematic, high-fidelity 3D animated sequence featuring the Dave-Tech Guardian
 
 The project follows a modern React component-based architecture with a focus on 3D scene management:
 
-- `client/src/components/video/`: Core animation orchestration and scene components.
-- `client/src/components/video/video_scenes/`: Individual animation sequences and 3D logic.
-- `client/public/assets/`: Static 3D models and textures.
-- `vite.config.ts`: Optimized build configuration for Replit and modern web standards.
+- `client/src/components/video/VideoTemplate.tsx`: Main orchestrator handling scene transitions and persistent background effects.
+- `client/src/components/video/video_scenes/`: Modular scene components (Scene1-Scene5) containing specific 3D logic and animations.
+- `client/public/assets/`: Static 3D models, textures, and environmental maps.
+- `client/src/lib/video/`: Utility hooks and animation helpers for the video pipeline.
 
 ## 📥 Installation
 
@@ -46,6 +47,9 @@ npm run dev:client
 ```
 The application will be available at `http://0.0.0.0:5000`.
 
+### Scene Transitions
+The animation cycles through scenes automatically based on durations defined in the orchestrator. You can monitor the `currentScene` state to sync external UI elements.
+
 ### Production Build
 
 To create an optimized production build:
@@ -56,12 +60,25 @@ Assets will be generated in the `dist/` directory.
 
 ## ⚙️ Configuration
 
-### Customizing Animations
-Timing and durations can be adjusted in `client/src/components/video/VideoTemplate.tsx`.
+### Customizing Durations
+Timing for each phase can be adjusted in `client/src/components/video/VideoTemplate.tsx` via the `SCENE_DURATIONS` object:
+```typescript
+const SCENE_DURATIONS = {
+  enter: 4000,
+  shield: 4500,
+  token: 4500,
+  power: 4000,
+  outro: 4000,
+};
+```
 
 ### Visual Assets
-- **Textures**: Replace or update `client/public/assets/robot-torso.png` to modify the mascot's appearance.
-- **Styling**: Global styles and Tailwind configuration are managed in `client/src/index.css` and `postcss.config.js`.
+- **Mascot**: Update `client/public/assets/robot-torso.png` to change the main AI character's appearance.
+- **Environment**: Modify `client/public/assets/cyberpunk-bg.png` for a different background atmosphere.
+- **Holograms**: Use `client/public/assets/hologram-texture.png` and `digital-shield.png` to customize the UI overlays.
+
+### Styling & Effects
+Global styles, scanline effects, and Tailwind utilities are managed in `client/src/index.css`.
 
 ## 📝 License
 
