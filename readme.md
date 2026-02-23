@@ -1,84 +1,68 @@
 # Dave-Tech Guardian $DL Token Animation
 
-A cinematic, high-fidelity 3D animated sequence featuring the Dave-Tech Guardian AI mascot for the $DL token. Built with React, Framer Motion, and Three.js.
+A cinematic, high-fidelity 3D animated sequence featuring the Dave-Tech Guardian AI mascot for the $DL token. Built with React, Framer Motion, and Three.js, optimized for Replit deployment.
 
-## Tech Stack
+## 🚀 Features
 
-- **React**: Frontend framework
-- **Framer Motion**: Motion graphics and orchestration
-- **Three.js / React Three Fiber**: 3D rendering and effects
-- **Tailwind CSS**: Styling and layout
-- **Vite**: Build tool and dev server
+- **3D AI Mascot**: High-fidelity robot torso model with dynamic animations.
+- **Cinematic Sequences**: Orchestrated scenes including shield deployment, token orbiting, and power-up effects.
+- **Holographic UI**: Real-time 3D holographic overlays and UI elements.
+- **Performance Optimized**: Built with Vite and React Three Fiber for smooth 60FPS rendering.
+- **Replit Ready**: Pre-configured workflows for instant development and deployment.
 
-## Setup & Installation
+## 🛠 Tech Stack
 
-### Prerequisites
+- **Framework**: React 19
+- **3D Engine**: Three.js with React Three Fiber (@react-three/fiber)
+- **Animation**: Framer Motion & GSAP
+- **Styling**: Tailwind CSS 4
+- **Build Tool**: Vite 7
 
-- Node.js (v18 or higher)
-- npm or yarn
+## 📂 Architecture
 
-### Installation Steps
+The project follows a modern React component-based architecture with a focus on 3D scene management:
 
-1. Clone the repository to your local machine.
-2. Install the project dependencies:
+- `client/src/components/video/`: Core animation orchestration and scene components.
+- `client/src/components/video/video_scenes/`: Individual animation sequences and 3D logic.
+- `client/public/assets/`: Static 3D models and textures.
+- `vite.config.ts`: Optimized build configuration for Replit and modern web standards.
+
+## 📥 Installation
+
+1. **Clone & Open**: Open this project in your Replit workspace.
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
+   *Note: Replit Agent handles this automatically during initial setup.*
 
-### Running the Development Server
+## 🚦 Usage
 
-To start the development server and view the animation:
+### Development
+
+To start the development server with hot module replacement:
 ```bash
 npm run dev:client
 ```
-The application will be available at `http://localhost:5000` (or the port specified in your terminal).
+The application will be available at `http://0.0.0.0:5000`.
 
-## Usage
+### Production Build
 
-### Viewing the Animation
-
-The $DL Token animation is designed to auto-play on load and loop seamlessly. It is a non-interactive video sequence intended for:
-- Website banners
-- Presentations
-- Token promotion and branding
-
-Simply open the application in your browser to view the high-quality 3D render, holographic shield deployment, and token orbiting sequences.
-
-## Customization
-
-### Modifying the Mascot
-
-The mascot's visual properties can be adjusted in the scene files located at `client/src/components/video/video_scenes/`.
-- **Mascot Textures/Plating**: Update the images in `client/public/assets/robot-torso.png`.
-- **Lighting & Colors**: Modify the CSS variables in `client/src/index.css` (e.g., `--color-accent` for the neon blue glow).
-
-### Animation Settings
-
-To change the timing or duration of the sequences:
-- Open `client/src/components/video/VideoTemplate.tsx`.
-- Adjust the `SCENE_DURATIONS` object to change how long each phase (e.g., `shield`, `token`, `power`) lasts.
-
-## Production
-
-To create a production-ready build of the frontend:
+To create an optimized production build:
 ```bash
-npm run build:client
+npm run build
 ```
-The optimized assets will be generated in the `dist/` directory.
+Assets will be generated in the `dist/` directory.
 
-## Metadata
+## ⚙️ Configuration
 
-### License
+### Customizing Animations
+Timing and durations can be adjusted in `client/src/components/video/VideoTemplate.tsx`.
 
-This project is licensed under the **MIT License**.
+### Visual Assets
+- **Textures**: Replace or update `client/public/assets/robot-torso.png` to modify the mascot's appearance.
+- **Styling**: Global styles and Tailwind configuration are managed in `client/src/index.css` and `postcss.config.js`.
 
-### Contributors
+## 📝 License
 
-- [Your Name/Organization Placeholder]
-- (Add contributors here)
-
----
-
-## Exporting
-
-To export the animation as a high-quality video file, use the **Export** button in the Replit interface. The recording pipeline will automatically capture the sequence and process it into a downloadable format.
+This project is licensed under the MIT License.
