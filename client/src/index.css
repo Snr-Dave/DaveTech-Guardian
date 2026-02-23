@@ -3,24 +3,24 @@
 /* REPLACE THESE -- define your own palette and fonts for each video */
 :root {
   --color-primary: #000000;
-  --color-secondary: #6B7280;
-  --color-accent: #3B82F6;
+  --color-secondary: #0A192F; /* Deep navy */
+  --color-accent: #00E5FF; /* Neon blue */
 
-  --color-bg-light: #FFFFFF;
-  --color-bg-dark: #0F172A;
-  --color-bg-muted: #F8FAFC;
+  --color-bg-light: #0A0F1D;
+  --color-bg-dark: #02040A;
+  --color-bg-muted: #111C35;
 
-  --color-text-primary: #111827;
-  --color-text-secondary: #6B7280;
-  --color-text-muted: #9CA3AF;
-  --color-text-inverse: #FFFFFF;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8BA4D8;
+  --color-text-muted: #4B6B9B;
+  --color-text-inverse: #000000;
 
-  --color-success: #10B981;
-  --color-warning: #F59E0B;
-  --color-error: #EF4444;
+  --color-success: #00E5FF;
+  --color-warning: #FF3366;
+  --color-error: #FF0033;
 
   --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: 'JetBrains Mono', monospace;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -47,4 +47,23 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.7), 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.box-glow {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+.scanline {
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,229,255,0.1) 50%, rgba(0,229,255,0.1));
+  background-size: 100% 4px;
 }
