@@ -4,6 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
+    "dev": "vite dev --port 5000",
     "dev:client": "vite dev --port 5000",
     "build": "vite build",
     "check": "tsc"
